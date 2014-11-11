@@ -1,12 +1,17 @@
 var server = require('express')();
 var http = require('http').Server(server);
 
+server.use(require('express-ejs-layouts'));
+server.use(require('express').static('public'));
+
+server.set('view engine', 'ejs');
+
 server.get('/', function (req, res) {
-  res.send('<button>Start</button>');
+	res.render('index.ejs');
 });
 
 server.get('/vote', function (req, res) {
-	res.send('<p>1 users connected</p>');
+	res.send('<p>HAARRLOOWWW from vote</p>')
 });
 
 var port = process.env.PORT || 1337;
