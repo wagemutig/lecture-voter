@@ -1,0 +1,40 @@
+{
+  "name": "lecture-voter",
+  "version": "1.0.0",
+  "description": "Makers Academy group project.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.10.2",
+    "express-ejs-layouts": "^1.1.0",
+    "iced-coffee-script": "^1.8.0-a",
+    "socket.io": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "jasmine-node": "^1.14.5",
+    "mocha": "^2.0.1",
+    "zombie": "^2.1.1"
+  },
+  "scripts": {
+    "test": "mocha test/features/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mala23/lecture-voter"
+  },
+  "keywords": [
+    "awesome",
+    "makers",
+    "voting"
+  ],
+  "author": "the dreamteam of awesomeness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mala23/lecture-voter/issues"
+  },
+  "homepage": "https://github.com/mala23/lecture-voter"
+}
