@@ -5,7 +5,8 @@ server.get('/', function (req, res) {
   res.send('<button>Start</button>');
 });
 
-server.listen(1337, function() {
+var port = process.env.PORT || 1337;
+server.listen(port, function() {
 
   // var host= server.address().address
   // var port = server.address().port
