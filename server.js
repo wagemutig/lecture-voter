@@ -5,6 +5,10 @@ server.get('/', function (req, res) {
   res.send('<button>Start</button>');
 });
 
+server.get('/vote', function (req, res) {
+	res.send('<p>1 users connected</p>');
+});
+
 var port = process.env.PORT || 1337;
 server.listen(port, function() {
 
