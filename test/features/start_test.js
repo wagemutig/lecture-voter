@@ -8,14 +8,27 @@ describe('User visits start', function() {
 
   var browser;
 
+  before(function(){
+    this.server = server.listen(1337);
+    browser = new Browser({ site: 'http://localhost:1337' });
+  });
+
+  beforeEach(function(done) {
+    browser.visit('/', done);
+  });
+
+  it('visits the page', function() {
+    expect(browser.success).to.be.true;
+  });
+
   it('can see the start button', function() {
+    expect(browser.text('button')).to.equal('Start');
+  });
 
-    // this.server = server.listen(1337);
-
-    browser = new Browser({site: '127.0.0.1:1337'});
-
-    browser.visit('/', function() {
-    expect(browser.text('button')).to.eql('Start');
+  it('clicks button and sees how many users are connected', function() {
+    browser.pressButton('Start', function() {
+      console.log('HEY')
+      expect(browser.text('var')).to.equal('1')  
     });
   });
 

@@ -1,18 +1,20 @@
 var server = require('express')();
 var http = require('http').Server(server);
+var expressLayouts = require('express-ejs-layouts');
+
+server.set('view engine', 'ejs');
+server.set('views',__dirname + '/views');
+server.use(expressLayouts)
+server.use(require('express').static(__dirname + '/public'));
 
 server.get('/', function (req, res) {
-  res.send('<button>Start</button>');
+  res.render('index', { layout: 'layout'})
 });
 
 var port = process.env.PORT || 1337;
-server.listen(port, function() {
 
-  // var host= server.address().address
-  // var port = server.address().port
-
-  console.log('Hello Node at')
-
+http.listen(port, function() {
+  console.log('Hello Node at ' + port)
 })
 
-module.exports = server;
+module.exports = http;
