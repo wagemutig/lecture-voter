@@ -11,7 +11,7 @@ server.get('/', function (req, res) {
 });
 
 server.get('/vote', function (req, res) {
-	res.send('<p>HAARRLOOWWW from vote</p>')
+	res.send('<a>HAARRLOOWWW from vote</a>')
 });
 
 var port = process.env.PORT || 1337;
