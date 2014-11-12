@@ -21,3 +21,5 @@ var port = process.env.PORT || 1337;
 http.listen(port, function() {
   console.log('Time to vote at ' + port)
 })
+
+module.exports = http;
