@@ -29,6 +29,7 @@ describe('The Interface', function() {
   it('you can up the userVote value', function(){
     interface.upVote()
     expect(interface.userVote).toEqual(1)
-  })   
+  })
+   
 
 });
