@@ -14,7 +14,7 @@ $(document).ready(function() {
   
   $('#user-votes').text(userVote);
 
-  var user = io.connect('http://192.168.50.42');
+  var user = io.connect('http://192.168.50.141');
   user.on('connected user update', function(data) {
     console.log(data.countVoters + ' voters connected')
     $('#connected-users').text(data.countVoters + ' voters connected')
