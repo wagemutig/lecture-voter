@@ -18,8 +18,6 @@ server.get('/', function (req, res) {
 });
 
 server.get('/vote', function (req, res) {
-	voter = new Voter;
-	lecture.addVoter(voter);
   res.render('vote', { layout: 'layout'})
 });
 
@@ -30,3 +28,18 @@ http.listen(port, function() {
 })
 
 module.exports = http;
+
+io.on('connection', function(user) {
+  voter = new Voter;
+  lecture.addVoter(voter);
+  console.log("===New Connection===")
+  console.log(lecture)
+  io.sockets.emit('connected user update', {countVoters: lecture.countVoters()}) 
+
+  user.on('disconnect', function() {
+    lecture.removeVoter(voter)
+    console.log("===Disconnection===")
+    console.log(lecture)
+    io.sockets.emit('connected user update', {countVoters: lecture.countVoters()}) 
+  });
+});
