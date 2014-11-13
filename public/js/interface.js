@@ -21,9 +21,13 @@ Interface.prototype.emitMessage = function(e){
 $(document).ready(function() {
 
   var view = new Interface(io.connect('192.168.50.141'))
-  var chart = new SmoothieChart({maxValue:55,minValue:-55})
+  var chart = new SmoothieChart({ grid: {fillStyle:'#ffffff',
+                                  strokeStyle:'#ebebeb',
+                                  sharpLines:true,},
+                                  labels: {disabled:true},
+                                  maxValue:55,minValue:-55})
   var votes = new TimeSeries()
-  var line = {strokeStyle: 'pink', lineWidth:3}
+  var line = {strokeStyle: '#979797', lineWidth:2}
 
   chart.streamTo(document.getElementById('chart'),1000)
   chart.addTimeSeries(votes, line)
