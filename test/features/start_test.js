@@ -13,9 +13,9 @@ describe('Voter visits homepage', function() {
     browser = new Browser({site: '127.0.0.1:1337'});  	
   });
 
- beforeEach(function(done) {
-  browser.visit('/', done);
- });
+  beforeEach(function(done) {
+    browser.visit('/', done);
+  });
 
 
   it('can see the start button', function() {
