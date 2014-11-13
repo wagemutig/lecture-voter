@@ -14,13 +14,12 @@ server.use(require('express').static(__dirname + '/public'));
 lecture = new Lecture;
 
 server.get('/', function (req, res) {
-	voter = new Voter;
-	lecture.addVoter(voter);
-	console.log(lecture);
   res.render('index', { layout: 'layout'})
 });
 
 server.get('/vote', function (req, res) {
+	voter = new Voter;
+	lecture.addVoter(voter);
   res.render('vote', { layout: 'layout'})
 });
 
