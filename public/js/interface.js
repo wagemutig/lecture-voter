@@ -19,8 +19,8 @@ Interface.prototype.emitMessage = function(e){
 }
 
 $(document).ready(function() {
-
-  var view = new Interface(io.connect('192.168.50.141'))
+  
+  var view = new Interface(io.connect('lecture-voter.herokuapp.com'))
   var chart = new SmoothieChart({ grid: {fillStyle:'#ffffff',
                                   strokeStyle:'#ebebeb',
                                   sharpLines:true,},
