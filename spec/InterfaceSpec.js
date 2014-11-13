@@ -1,5 +1,6 @@
 "strict"
 var Interface = require('../lib/Interface');
+//var io = require('socket.io-client')
 
 describe('The Interface', function() {
   
@@ -14,7 +15,7 @@ describe('The Interface', function() {
   });
 
   it('has a plus button', function(){
-    expect(interface.plus).toEqual('#plus')
+    expect(interface.plus).toEqual('plus')
   })
 
   it('has a minus button', function(){
@@ -31,5 +32,11 @@ describe('The Interface', function() {
     expect(interface.userVote).toEqual(1)
   })
    
+  it('emits 1 on a plus click', function(){
+    var e = {"target":{"id":"plus"}} 
+    var click = interface.emitMessage(e)
+    expect(click).toEqual('not ok')
+  })
 
 });
+
