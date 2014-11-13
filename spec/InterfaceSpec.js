@@ -7,7 +7,8 @@ describe('The Interface', function() {
   var interface
 
   beforeEach(function(){
-    interface = new Interface
+    var connection = {"emit":function(){return 1}}
+    interface = new Interface(connection)
   });
 
   it('a userVote value set to 0', function(){
@@ -35,7 +36,7 @@ describe('The Interface', function() {
   it('emits 1 on a plus click', function(){
     var e = {"target":{"id":"plus"}} 
     var click = interface.emitMessage(e)
-    expect(click).toEqual('not ok')
+    expect(click).toEqual(false)
   })
 
 });
