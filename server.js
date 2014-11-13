@@ -19,8 +19,6 @@ server.get('/', function (req, res) {
 });
 
 server.get('/vote', function (req, res) {
-	voter = new Voter;
-	lecture.addVoter(voter);
   res.render('vote', { layout: 'layout'})
 });
 
@@ -32,10 +30,10 @@ module.exports = http;
 
 io.on('connection', function(connection) {
   
-  console.log("===========NEW CONNECTION============")
-  voter = new Voter;
-  voter.connect(connection);
+  console.log("NEW CONNECTION")
+  voter = new Voter(connection);
   lecture.addVoter(voter);
+  console.log(lecture.voters)
   
   io.sockets.emit('update voter count', {countVoters: lecture.countVoters()})
 
@@ -46,7 +44,9 @@ io.on('connection', function(connection) {
   });
 
   voter.connection.on('disconnect', function() {
+    console.log("DISCONECT")
     lecture.removeVoter(voter)
+    console.log(lecture.voters)
     io.sockets.emit('update voter count', {countVoters: lecture.countVoters()})
   });
 
@@ -54,5 +54,4 @@ io.on('connection', function(connection) {
 
 setInterval(function(){
   io.sockets.emit('graph update', {totalVotes: lecture.totalVotes})
-  console.log(lecture.totalVotes)
 },1000);

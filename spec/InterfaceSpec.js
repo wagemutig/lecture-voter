@@ -20,7 +20,7 @@ describe('The Interface', function() {
   })
 
   it('has a minus button', function(){
-    expect(interface.minus).toEqual('#minus')
+    expect(interface.minus).toEqual('minus')
   })
 
   it('you can down the userVote value', function(){
@@ -38,6 +38,10 @@ describe('The Interface', function() {
     var click = interface.emitMessage(e)
     expect(click).toEqual(false)
   })
+
+  // it('displays how many folk are connected', function(){
+  //   expect(interface.updateVoterCount(1)).toEqual('<val>')
+  // })
 
 });
 

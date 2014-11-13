@@ -1,0 +1,8 @@
+body{
+  font-size: 3em;
+}
+canvas{
+  display: block;
+  width: 500px;
+  height: 100px;
+}
