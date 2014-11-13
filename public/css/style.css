@@ -1,80 +1,87 @@
-<<<<<<< HEAD
+
 !-- General --!
 body {
   background-color: 'white';
 }
-
-/*
-.wrapper {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-
-  flex: 1 100%;
-}
-*/
+a h2{ 
+  font-family: "museo-slab", serif;
+  font-style: italic;
+  text-decoration: none;
+}  
 
 header {
-  position: relative;
-  top: 5rem;
+  display: block;
+  margin: 10% 0% 8% 0%;
   text-align: center;
 }
 
 h1 {
   font-family: "museo-slab", serif;
   font-style: italic;
-  font-size: 6em;
+  font-size: 206%;
   letter-spacing: 0.4px;
   color: #555555;
 }
 
-!-- Start Page --!
-section#start {
-  position: relative;
-  top: 12rem;
-  text-align: center;
-
-  padding-right: 5%;
-  padding-left: 5%;
-}
-
-p {
+main section p{
   font-family: "effra", light;
-  font-size: 2em;
+  margin: 20% 8% 0% 8%;
+  font-size: 100%;
   letter-spacing: 1.2px;
   line-height: 1.8em;
 }
-
-a {
-  text-decoration: none;
-  position: relative;
-  width: 100%;
-  line-height: 6em;
-
+main section article{
+  width: 63%;
+  height: 8em;
+  margin: 26% auto 0% auto;
+  padding: 23% 0% 0% 0%;
+  background-color: rgba(147,233,171,0.5);
+  border: solid 5px rgba(147,233,171,1);
+  border-radius: 100%; 
+  text-align: center;
+}
+main section a{
   font-family: "museo-slab", serif;
   font-style: italic;
-  font-size: 6em;
-  letter-spacing: 0.4px;
-  color: #555555;
+  text-shadow: -1px 2px rgba(0,0,0,0.2);
+  letter-spacing: 2px;
+  font-size: 323%;
+  color: rgb(255,255,255);
+  width: 100%;
+  margin: 0% auto 0% auto;
 }
+main canvas {
+  width: 100%;
+}
+main h2 {
+  display: block;
+  padding: 3% 0% 3% 4%;
+}
+main article var {
+  width:100%;
+  display:line-block;
+  line-height: 2em;
+  margin: 0% 0% 0% 0%;
+}
+main article a {
+  width:100%;
+  display: block;
+  padding: 7% 0% 7% 0%;
+  text-align: center;
+  font-size: 474%;
+  color: rgba(255,255,255,1)
+}
+main article a#plus {
+  background-color: rgb(147,233,171);
+}
+main article a#minus {
+  background-color: rgb(255,108,108);
+}
+
 
 !-- Vote Page --!
 .graph {
   background-color: red;
   width: 100%;
 }
-=======
-body{
-  font-size: 3em;
-}
-canvas{
-  display: block;
-  width: 500px;
-  height: 100px;
-}
->>>>>>> cb5656486a42cf7b65ae6d1e6b5bbae1fda27e59
+
