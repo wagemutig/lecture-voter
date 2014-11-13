@@ -16,11 +16,11 @@ describe('User can vote', function() {
   });
 
   it('by using the plus button', function() {
-    expect(browser.text('button#plus')).to.eql('+');
+    expect(browser.text('a#plus')).to.eql('+');
   });
 
   it('by using the minus button', function() {
-    expect(browser.text('button#minus')).to.eql('-');
+    expect(browser.text('a#minus')).to.eql('-');
   });
 
 });

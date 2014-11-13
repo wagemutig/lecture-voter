@@ -1,4 +1,4 @@
-var Voter = require('../models/voter');
+var Voter = require('../lib/Voter');
 
 describe("Voter", function() {
 
