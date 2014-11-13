@@ -3,11 +3,18 @@
 body {
   background-color: 'white';
 }
-a h2{ 
+i.fa{pointer-events:none;}
+a{ 
   font-family: "museo-slab", serif;
   font-style: italic;
   text-decoration: none;
-}  
+}
+p, h2{
+  font-family: "effra", light;
+  font-size: 100%;
+  letter-spacing: 1.2px;
+  line-height: 1.8em;
+} 
 
 header {
   display: block;
@@ -24,11 +31,7 @@ h1 {
 }
 
 main section p{
-  font-family: "effra", light;
   margin: 20% 8% 0% 8%;
-  font-size: 100%;
-  letter-spacing: 1.2px;
-  line-height: 1.8em;
 }
 main section article{
   width: 63%;
@@ -52,10 +55,11 @@ main section a{
 }
 main canvas {
   width: 100%;
+  border: solid 2px rgb(220,220,220);
 }
 main h2 {
-  display: block;
-  padding: 3% 0% 3% 4%;
+  display: inline-block;
+  padding: 3% 0% 3% 8%;
 }
 main article var {
   width:100%;
@@ -78,10 +82,4 @@ main article a#minus {
   background-color: rgb(255,108,108);
 }
 
-
-!-- Vote Page --!
-.graph {
-  background-color: red;
-  width: 100%;
-}
 

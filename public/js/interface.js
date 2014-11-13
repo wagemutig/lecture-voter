@@ -32,17 +32,16 @@ $(document).ready(function() {
   chart.streamTo(document.getElementById('chart'),1000)
   chart.addTimeSeries(votes, line)
   
-  $('a').click(function(e){
-    view.emitMessage(e)
-  })
 
   view.socket.on('graph update', function(data){
     votes.append(new Date().getTime(), data.totalVotes)
+    $('samp').text(data.totalVotes)
   })
 
   view.socket.on('update voter count', function(data){
     $('var').text(data.countVoters)
   })
   
+  $('a').click(function(e){view.emitMessage(e)})
 
 })
