@@ -45,4 +45,18 @@ describe ('Lecture', function() {
     expect(lecture.countVoters()).toEqual(2)
 	})
 
+	it('can have total votes', function() {
+		expect(lecture.totalVotes).toEqual(0);
+	});
+
+	it('can add to total votes', function() {
+		lecture.updateTotalVotes(1);
+	
+		expect(lecture.totalVotes).toEqual(1);
+	});
+
 });
+
+
+
+

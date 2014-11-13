@@ -29,4 +29,14 @@ describe("Voter", function() {
     expect(voter.lastVote()).toEqual("vote2")
   });
 
+  it('can have a connection', function() {
+    expect(voter.connection).toEqual(null);
+  });
+
+  it('can establish a connection', function() {
+    voter.connect("test");
+    expect(voter.connection).toEqual("test");
+  })
+
+
 });
