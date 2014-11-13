@@ -2,13 +2,21 @@ var server = require('express')();
 var http = require('http').Server(server);
 var expressLayouts = require('express-ejs-layouts');
 var io = require('socket.io')(http);
+var Lecture = require('./models/Lecture.js');
+var Voter = require('./models/Voter.js');
 
 server.set('view engine', 'ejs');
 server.set('views',__dirname + '/views');
 server.use(expressLayouts)
 server.use(require('express').static(__dirname + '/public'));
 
+
+lecture = new Lecture;
+
 server.get('/', function (req, res) {
+	voter = new Voter;
+	lecture.addVoter(voter);
+	console.log(lecture);
   res.render('index', { layout: 'layout'})
 });
 
