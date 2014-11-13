@@ -29,3 +29,26 @@ http.listen(port, function() {
 })
 
 module.exports = http;
+
+io.on('connection', function(connection) {
+  voter = new Voter;
+  voter.connect(connection);
+  lecture.addVoter(voter);
+  io.sockets.emit('update voter count', {countVoters: lecture.countVoters()})
+
+  voter.connection.on('userVote', function(data) {
+    var userVote = data.userVote
+    voter.addVote(new Date().getTime(), userVote)
+    lecture.updateTotalVotes(userVote)
+  });
+
+  voter.connection.on('disconnect', function() {
+    lecture.removeVoter(voter)
+    io.sockets.emit('update voter count', {countVoters: lecture.countVoters()})
+  });
+
+});
+
+setInterval(function(){
+  io.sockets.emit('graph update', {totalVotes: lecture.totalVotes.value})
+},1000);
