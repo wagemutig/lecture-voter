@@ -1,5 +1,5 @@
 "strict"
-var Lecture = require ('../lib/Lecture');
+var Lecture = require('../lib/Lecture');
 
 
 describe ('Lecture', function() {

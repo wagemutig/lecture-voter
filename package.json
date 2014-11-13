@@ -20,7 +20,7 @@
     "zombie": "^2.1.1"
   },
   "scripts": {
-    "test": "mocha test/features && jasmine-node --verbose spec",
+    "test": "mocha && jasmine-node --verbose spec",
     "start": "node server.js"
   },
   "repository": {
