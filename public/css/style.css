@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !-- General --!
 body {
   background-color: 'white';
@@ -67,3 +68,13 @@ a {
   background-color: red;
   width: 100%;
 }
+=======
+body{
+  font-size: 3em;
+}
+canvas{
+  display: block;
+  width: 500px;
+  height: 100px;
+}
+>>>>>>> cb5656486a42cf7b65ae6d1e6b5bbae1fda27e59

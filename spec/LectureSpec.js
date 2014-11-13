@@ -1,5 +1,5 @@
 "strict"
-var Lecture = require ('../lib/Lecture');
+var Lecture = require('../lib/Lecture');
 
 
 describe ('Lecture', function() {
@@ -54,6 +54,19 @@ describe ('Lecture', function() {
 	
 		expect(lecture.totalVotes).toEqual(1);
 	});
+
+  it('has a max total votes', function(){
+    lecture.updateTotalVotes(50);
+    lecture.updateTotalVotes(1);
+    expect(lecture.totalVotes).toEqual(50);
+  })
+
+  it('has a min total votes', function(){
+    lecture.updateTotalVotes(-50);
+    lecture.updateTotalVotes(-1);
+    expect(lecture.totalVotes).toEqual(-50);
+  })
+
 
 });
 

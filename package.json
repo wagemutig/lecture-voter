@@ -17,10 +17,11 @@
     "chai": "^1.10.0",
     "jasmine-node": "^1.14.5",
     "mocha": "^2.0.1",
-    "zombie": "^2.1.1"
+    "zombie": "^2.1.1",
+    "socket.io-client": "^1.2.0"
   },
   "scripts": {
-    "test": "mocha test/features && jasmine-node --verbose spec",
+    "test": "mocha && jasmine-node --verbose spec",
     "start": "node server.js"
   },
   "repository": {

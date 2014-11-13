@@ -5,7 +5,8 @@ describe("Voter", function() {
   var voter
 
   beforeEach(function(){
-    voter = new Voter;
+    var connection = {}
+    voter = new Voter(connection);
   });
 
   it("can have a data", function() {
@@ -28,5 +29,10 @@ describe("Voter", function() {
     voter.addVote('timestamp2', 'vote2')
     expect(voter.lastVote()).toEqual("vote2")
   });
+
+  it('can have a connection', function() {
+    expect(voter.connection).toEqual({});
+  });
+
 
 });

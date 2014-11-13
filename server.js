@@ -11,7 +11,7 @@ server.set('views',__dirname + '/views');
 server.use(expressLayouts)
 server.use(require('express').static(__dirname + '/public'));
 
-var lecture = new Lecture;
+var lecture = new Lecture();
 var port = process.env.PORT || 1337;
 
 server.get('/', function (req, res) {
@@ -19,8 +19,6 @@ server.get('/', function (req, res) {
 });
 
 server.get('/vote', function (req, res) {
-	voter = new Voter;
-	lecture.addVoter(voter);
   res.render('vote', { layout: 'layout'})
 });
 
@@ -29,3 +27,31 @@ http.listen(port, function() {
 })
 
 module.exports = http;
+
+io.on('connection', function(connection) {
+  
+  console.log("NEW CONNECTION")
+  voter = new Voter(connection);
+  lecture.addVoter(voter);
+  console.log(lecture.voters)
+  
+  io.sockets.emit('update voter count', {countVoters: lecture.countVoters()})
+
+  voter.connection.on('userVote', function(data) {
+    var userVote = data.userVote
+    voter.addVote(new Date().getTime(), userVote)
+    lecture.updateTotalVotes(userVote)
+  });
+
+  voter.connection.on('disconnect', function() {
+    console.log("DISCONECT")
+    lecture.removeVoter(voter)
+    console.log(lecture.voters)
+    io.sockets.emit('update voter count', {countVoters: lecture.countVoters()})
+  });
+
+});
+
+setInterval(function(){
+  io.sockets.emit('graph update', {totalVotes: lecture.totalVotes})
+},1000);
