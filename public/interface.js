@@ -3,8 +3,14 @@ $(document).ready(function() {
 		window.location = ('/vote');
 	})
 
-
   var userVote = 0;
+  var chart = new SmoothieChart({maxValue:50,minValue:-50})
+  var graph = $('#graph')
+  var votes = new TimeSeries()
+  var totalVotes = 0
+  var lineStyle = {strokeStyle: 'white', lineWidth:3}
+
+  chart.streamTo(document.getElementById("graph"), 1000)
   
   $('#user-votes').text(userVote);
 
@@ -28,5 +34,9 @@ $(document).ready(function() {
 
   user.on('graph update', function(data){
     console.log(data.totalVotes)
+    votes.append(new Date().getTime(), data.totalVotes)
   });
+
+  chart.addTimeSeries(votes, lineStyle);
+
 })
