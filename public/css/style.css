@@ -12,6 +12,7 @@ img#splash {
 
 body {
   background-color: 'white';
+  -webkit-user-select: none;
 }
 i.fa{pointer-events:none;}
 a{ 
@@ -63,6 +64,7 @@ main section a{
 main canvas {
   width: 100%;
   border: solid 2px rgb(220,220,220);
+  display: block;
 }
 main h2 {
   display: inline-block;
@@ -110,5 +112,21 @@ main nav a#minus {
     display: inline-block;
   }
 }
-
+@media only screen and (min-width: 68em){
+  header{
+    margin: 2% 0% 2% 0%;
+  }
+  main h2 {
+    padding: 2% 0% 0% 26%;
+  }
+  main nav {
+    width: 29%;
+    margin: auto;
+  }
+  main nav a{
+    margin: 11% 0% 0% 0%;
+    padding: 7% 0% 7% 0%;
+    width: 100%;
+  }
+}
 
