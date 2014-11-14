@@ -21,16 +21,26 @@ Interface.prototype.emitMessage = function(e){
 $(document).ready(function() {
   
   var view = new Interface(io.connect('lecture-voter.herokuapp.com'))
-  // var chart = new SmoothieChart({ grid: {fillStyle:'#ffffff',
-  //                                 strokeStyle:'#ebebeb',
-  //                                 sharpLines:true,},
-  //                                 labels: {disabled:true},
-  //                                 maxValue:55,minValue:-55})
-  // var votes = new TimeSeries()
-  // var line = {strokeStyle: '#979797', lineWidth:2}
+<<<<<<< HEAD
+  var chart = new SmoothieChart({ grid: {fillStyle:'#ffffff',
+                                  strokeStyle:'#ebebeb',
+                                  sharpLines:true,},
+                                  labels: {disabled:true},
+                                  maxValue:55,minValue:-55})
+  var votes = new TimeSeries()
+  var line = {strokeStyle: '#979797', lineWidth:2}
+=======
+  var chart = new SmoothieChart({ grid: {fillStyle:'#ffffff',
+                                  strokeStyle:'#ebebeb',
+                                  sharpLines:true,},
+                                  labels: {fillStyle:'#000000'}, 
+                                  maxValue:55,minValue:-55})
+  var votes = new TimeSeries()
+  var line = {strokeStyle: '#979797', lineWidth:2}
+>>>>>>> 886117be43002e5551b01396246968df9ec5e917
 
-  // chart.streamTo(document.getElementById('chart'),1000)
-  // chart.addTimeSeries(votes, line)
+  chart.streamTo(document.getElementById('chart'),1000)
+  chart.addTimeSeries(votes, line)
   
 
   view.socket.on('graph update', function(data){
@@ -43,5 +53,7 @@ $(document).ready(function() {
   })
   
   $('a').click(function(e){view.emitMessage(e)})
+
+  $('canvas').attr('width',$(window).width())
 
 })

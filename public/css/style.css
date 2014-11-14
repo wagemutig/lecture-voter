@@ -6,18 +6,20 @@ img {
   max-width: 100%;
 }
 
-img#splash {
+main img#splash {
   display: none;
 }
 
 body {
   background-color: 'white';
+  -webkit-user-select: none;
 }
 i.fa{pointer-events:none;}
 a{ 
   font-family: "museo-slab", serif;
   font-style: italic;
   text-decoration: none;
+  color: rgb(85,85,85);
 }
 p, h2{
   font-family: "effra", light;
@@ -44,25 +46,15 @@ main section p{
   margin: 20% 8% 0% 8%;
 }
 main section article{
-  position: fixed;
-  bottom: 0;
-  margin: 0% auto 0% auto;
+  width: 90%;
+  margin: 10% auto 0% auto;
   padding: 0% 0% 10% 0%;
   text-align: center;
-}
-main section a{
-  font-family: "museo-slab", serif;
-  font-style: italic;
-  text-shadow: -1px 2px rgba(0,0,0,0.2);
-  letter-spacing: 2px;
-  font-size: 323%;
-  color: rgb(255,255,255);
-  width: 100%;
-  margin: 0% auto 0% auto;
 }
 main canvas {
   width: 100%;
   border: solid 2px rgb(220,220,220);
+  display: block;
 }
 main h2 {
    -webkit-user-select: none;
@@ -75,7 +67,7 @@ main article var {
   line-height: 2em;
   margin: 0% 0% 0% 0%;
 }
-main article a {
+main nav a {
   width:100%;
   display: block;
   padding: 7% 0% 7% 0%;
@@ -96,7 +88,68 @@ main nav a#minus {
 ====================================== */
 
 @media only screen and (max-width: 24em) { /* width 1 */
-  
 }
-
+@media only screen and (min-width: 24em) and (max-width: 44em){
+  header {
+    margin: 1% 0% 0% 0%;
+  } 
+  main h2{
+    padding: 0% 0% 0% 9%;
+  }
+  main section p{
+    margin: 4% 8% 0% 8%;
+  }
+  main section article{
+    width: 90%;
+    margin: 0% auto 0% auto;
+    padding: 0% 0% 10% 0%;
+  }
+  main section article a img{
+    width: 30%;
+  }
+  main nav a{
+    margin: 0% -2% 0% 1%;
+    padding: 5% 0% 5% 0%;
+    width: 49%;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 68em){
+  header{
+    margin: 2% 0% 2% 0%;
+  }
+  main img#splash {
+    display: block;
+    width: 50%;
+    margin: -5% auto 0% auto;
+  }
+  main section p{
+    display: inline-block;
+    font-size: 149%;
+    width: 39%;
+    margin: 4% 0% 0% 6%;
+  }
+  main section article{
+    display: inline-block;
+    width: 50%;
+    margin: 0% 0% 0% 0%;
+    padding: 0% 0% 0% 0%;
+    text-align: right;
+  }
+  main section article a img{
+    width: 30%;
+  }  
+  main h2 {
+    padding: 2% 0% 0% 26%;
+  }
+  main nav {
+    width: 29%;
+    margin: auto;
+  }
+  main nav a{
+    margin: 11% 0% 0% 0%;
+    padding: 7% 0% 7% 0%;
+    width: 100%;
+  }
+}
 

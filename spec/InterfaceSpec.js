@@ -39,6 +39,10 @@ describe('The Interface', function() {
     expect(click).toEqual(false)
   })
 
+  it('can resize the canvas', function(){
+    expect(interface.sizeChart(360)).toEqual(360)
+  })
+
   // it('displays how many folk are connected', function(){
   //   expect(interface.updateVoterCount(1)).toEqual('<val>')
   // })
