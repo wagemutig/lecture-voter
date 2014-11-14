@@ -24,7 +24,7 @@ $(document).ready(function() {
   var chart = new SmoothieChart({ grid: {fillStyle:'#ffffff',
                                   strokeStyle:'#ebebeb',
                                   sharpLines:true,},
-                                  labels: {disabled:true},
+                                  labels: {fillStyle:'#000000'}, 
                                   maxValue:55,minValue:-55})
   var votes = new TimeSeries()
   var line = {strokeStyle: '#979797', lineWidth:2}

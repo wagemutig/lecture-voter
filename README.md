@@ -9,6 +9,7 @@ We tackled the problem using JavaScript and Node, with thorough testing in Mocha
 
 The app allows users to vote (+/-) while live streaming the collective results in the form of a graph.
 
-You can see the live version on Heroku at www.heroku.com/
+You can see the live version on Heroku at [lecture-voter.herokuapp.com]
+(https://lecture-voter.herokuapp.com)
 
 Participants: Bernard, Ella, Anna and Colin (September cohort)
