@@ -5,6 +5,7 @@ var expect = chai.expect;
 var Browser = require('zombie');
 
 describe('Voter visits homepage', function() {
+  this.timeout(15000)
 
   var browser;
 
@@ -19,12 +20,12 @@ describe('Voter visits homepage', function() {
 
 
   it('can see the start button', function() {
-    expect(browser.text('button')).to.equal('Start');
+    expect(browser.text('a')).to.equal('Start');
 
   });
 
   it('can click start button and go to the vote page', function() {
-      browser.pressButton('Start');
+      browser.clickLink('Start');
       expect(browser.location.pathname).to.equal('/vote');  
   });
 
