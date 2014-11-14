@@ -1,5 +1,7 @@
+/* ======================================
+        Globals
+====================================== */
 
-!-- General --!
 body {
   background-color: 'white';
 }
@@ -34,6 +36,8 @@ main section p{
   margin: 20% 8% 0% 8%;
 }
 main section article{
+  position: fixed;
+  bottom: 0;
   width: 63%;
   height: 8em;
   margin: 26% auto 0% auto;
@@ -83,3 +87,10 @@ main article a#minus {
 }
 
 
+/* ======================================
+        Media Queries
+====================================== */
+
+@media only screen and (max-width: 24em) { /* width 1 */
+  
+}
