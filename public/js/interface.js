@@ -20,7 +20,7 @@ Interface.prototype.emitMessage = function(e){
 
 $(document).ready(function() {
   
-  var view = new Interface(io.connect('localhost'))
+  var view = new Interface(io.connect('lecture-voter.herokuapp.com'))
   var chart = new SmoothieChart({ grid: {fillStyle:'#ffffff',
                                   strokeStyle:'#ebebeb',
                                   sharpLines:true,},
