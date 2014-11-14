@@ -20,12 +20,12 @@ describe('Voter visits homepage', function() {
 
 
   it('can see the start button', function() {
-    expect(browser.text('a')).to.equal('Start');
+    expect(browser.html('#start')).to.contain('img');
 
   });
 
   it('can click start button and go to the vote page', function() {
-      browser.clickLink('Start');
+      browser.clickLink('#start');
       expect(browser.location.pathname).to.equal('/vote');  
   });
 
