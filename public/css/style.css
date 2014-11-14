@@ -75,6 +75,7 @@ main article var {
   margin: 0% 0% 0% 0%;
 }
 main article a {
+  cursor: pointer;
   width:100%;
   display: block;
   padding: 7% 0% 7% 0%;
