@@ -5,6 +5,7 @@ var expect = chai.expect;
 var Browser = require('zombie');
 
 describe('User can', function() {
+  this.timeout(15000)
 
   var browser;
   before(function() {
@@ -17,11 +18,22 @@ describe('User can', function() {
   });
 
   it('see happy button', function() {
-    expect(browser.text('#plus')).to.be('');
+    expect(browser.html('#plus')).to.contain('</a>');
   });
 
-  xit('see sad button', function() {
-    expect(browser.text('#minus')).to.eql('');
+  it('see sad button', function() {
+    expect(browser.html('#minus')).to.contain('</a>');
   });
+
+  it('vote up', function() {
+    browser.clickLink('#plus')
+    expect(browser.text('#mood')).to.equal('Mood: 1');
+  });
+
+  it('vote down', function() {
+    browser.clickLink('#minus')
+    expect(browser.text('#mood')).to.equal('Mood: -1');
+  });
+
 
 });
