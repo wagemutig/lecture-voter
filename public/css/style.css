@@ -74,7 +74,7 @@ main article var {
   line-height: 2em;
   margin: 0% 0% 0% 0%;
 }
-main article a {
+main nav a {
   width:100%;
   display: block;
   padding: 7% 0% 7% 0%;
@@ -95,7 +95,20 @@ main nav a#minus {
 ====================================== */
 
 @media only screen and (max-width: 24em) { /* width 1 */
-  
+}
+@media only screen and (min-width: 24em) and (max-width: 44em){
+  header {
+    margin: 0% 0% 0% 0%;
+  } 
+  main h2{
+    padding: 0% 0% 0% 9%;
+  }
+  main nav a{
+    margin: 0% -2% 0% 1%;
+    padding: 5% 0% 5% 0%;
+    width: 49%;
+    display: inline-block;
+  }
 }
 
 
