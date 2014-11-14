@@ -21,7 +21,7 @@
     "socket.io-client": "^1.2.0"
   },
   "scripts": {
-    "test": "mocha && jasmine-node --verbose spec",
+    "test": "mocha test/features && jasmine-node --verbose spec",
     "start": "node server.js"
   },
   "repository": {
