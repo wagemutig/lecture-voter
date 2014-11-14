@@ -2,6 +2,14 @@
         Globals
 ====================================== */
 
+img {
+  max-width: 100%;
+}
+
+img#splash {
+  display: none;
+}
+
 body {
   background-color: 'white';
 }
@@ -38,13 +46,8 @@ main section p{
 main section article{
   position: fixed;
   bottom: 0;
-  width: 63%;
-  height: 8em;
-  margin: 26% auto 0% auto;
-  padding: 23% 0% 0% 0%;
-  background-color: rgba(147,233,171,0.5);
-  border: solid 5px rgba(147,233,171,1);
-  border-radius: 100%; 
+  margin: 0% auto 0% auto;
+  padding: 0% 0% 10% 0%;
   text-align: center;
 }
 main section a{
@@ -79,10 +82,10 @@ main article a {
   font-size: 474%;
   color: rgba(255,255,255,1)
 }
-main article a#plus {
+main nav a#plus {
   background-color: rgb(147,233,171);
 }
-main article a#minus {
+main nav a#minus {
   background-color: rgb(255,108,108);
 }
 
@@ -94,3 +97,5 @@ main article a#minus {
 @media only screen and (max-width: 24em) { /* width 1 */
   
 }
+
+
