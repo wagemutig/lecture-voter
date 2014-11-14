@@ -4,10 +4,11 @@ var chai = require('chai');
 var expect = chai.expect;
 var Browser = require('zombie');
 
-describe('User can vote', function() {
+describe('User can', function() {
 
   var browser;
   before(function() {
+    this.server = server.listen(1337);
     browser = new Browser({site: '127.0.0.1:1337'});
   });
 
@@ -15,12 +16,12 @@ describe('User can vote', function() {
     browser.visit('/vote', done);
   });
 
-  it('by using the plus button', function() {
-    expect(browser.text('a#plus')).to.eql('+');
+  it('see happy button', function() {
+    expect(browser.text('#plus')).to.be('');
   });
 
-  it('by using the minus button', function() {
-    expect(browser.text('a#minus')).to.eql('-');
+  xit('see sad button', function() {
+    expect(browser.text('#minus')).to.eql('');
   });
 
 });
